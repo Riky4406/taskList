@@ -1,0 +1,248 @@
+ /* עיצוב כללי */
+ /* body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f7fc;
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  text-align: center;
+  flex-direction: column; 
+}  */
+
+/* לוגו */
+/* עיצוב כללי */
+/* עיצוב כללי */
+ /* html, body {
+  height: 100%; 
+   margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+   flex-direction: column; 
+ }  */
+
+/* כל האלמנטים בתוך עמודים יהיו ממורכזים גם בגובה */ 
+/* .container, .auth-form, .todoapp {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 500px; 
+ background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 1s ease-in-out;
+  min-height: 400px;
+  margin: 0 auto; 
+  position: relative;
+}  */
+
+/* אנימציית כניסה */ 
+/* @keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}  */
+
+/* מרכזת את התוכן אנכית */
+/* * {
+  box-sizing: border-box; /* עוזר למנוע בעיות ריווח */
+/* }  */
+/* 
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+} */
+
+
+/* .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  max-width: 500px; /* רוחב מקסימלי */
+   /* margin: 0;
+  padding: 0;
+}   */ 
+
+/* כפתורים */
+button {
+  width: 60%;
+margin-left: 20%;
+  padding: 12px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 8px;
+  background-color: #007BFF;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+.logo {
+  margin-top: 15%;
+  display: block;
+  margin: 0 auto 20px; /* ממורכז במרכז הדף */
+  width: 340px;
+}
+
+/* button:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}  */
+
+/* שדות קלט */
+/* input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+} */
+
+/* עיצוב משימות */
+/* .todo-list {
+  list-style: none;
+  padding: 0;
+} */
+
+/* .todo-list li {
+  background: #eef2ff;
+  padding: 10px;
+  margin-top: 8px;
+  border-radius: 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background 0.3s ease-in-out;
+} */
+/* ריבועי המשימות */
+/* .todo-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f7f7f7;
+  margin-bottom: 10px;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 100%;
+} */
+/* .todo-list li {
+  height: 60px; 
+} */
+/* עיצוב לכפתור ה-checkbox */
+/* .toggle {
+  margin-right: 15px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid #007BFF;
+  background-color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+} */
+
+
+/* 
+.destroy {
+  background-size: contain;
+  border: none;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  padding: 5px;
+  transition: background 0.3s;
+}
+header h1 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+.new-todo {
+  width: 100%;
+  padding: 10px; */
+  /* border-radius: 5px; */
+  /* border: 1px solid #ccc; */
+/* } */
+/* 
+.todo-list li.completed {
+  text-decoration: line-through;
+  color: gray;
+  background: #d3e0ff;
+} */
+
+/* משפטים שנונים */
+/* .tagline {
+  font-style: italic;
+  font-size: 14px;
+  color: #555;
+  margin-top: 5px;
+} */
+
+/* .title {
+  font-family: "Poppins", sans-serif;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+} */
+
+/* עיצוב הכפתור עם אנימציה  */
+ /* .checkbox-container {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+}  */
+
+/* הסתרת ה-checkbox הרגיל */
+/* .checkbox-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  width: 0;
+  height: 0;
+} */
+
+/* עיגול רקע */ 
+/* .checkmark {
+  width: 24px;
+  height: 24px;
+  background-color: #ccc;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.3s, transform 0.2s;
+  position: absolute;
+  top: 0;
+  left: 0;
+} */
+
+/* סימן ה-V שיופיע כשהמשימה מסומנת */
+/* .checkbox-container input:checked + .checkmark {
+  background-color: #4CAF50;
+  transform: scale(1.1);
+} */
+
+ /* .checkbox-container input:checked + .checkmark::after {
+  content: '✔';
+  position: absolute;
+  top: 3px;
+  left: 6px;
+  font-size: 14px;
+}  */
+  
+
