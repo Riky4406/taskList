@@ -9,7 +9,7 @@ FROM --platform=$BUILDPLATFORM mcr.microsoft.com/dotnet/sdk:7.0 AS build
 ARG configuration=Release
 WORKDIR /src
 COPY ["TodoApi.csproj", "."]
-RUN dotnet restore "TodoApi/TodoApi.csproj"
+RUN dotnet restore "TodoApi.csproj"
 COPY . .
 WORKDIR "/src/TodoApi"
 RUN dotnet build "TodoApi.csproj" -c $configuration -o /app/build
