@@ -2,7 +2,7 @@
 import axios from 'axios';
 
 // Set default API URL (change it if needed)
-const apiUrl = "http://localhost:5050"; // URL מתאים לשרת שלך
+const apiUrl = process.env.REACT_APP_API_URL; // URL מתאים לשרת שלך
 axios.defaults.baseURL = apiUrl;
 
 // Add a global interceptor for error handling and 401 redirection
