@@ -30,7 +30,7 @@ builder.Services.AddDbContext<ToDoDbContext>(options =>
     options.UseMySql(builder.Configuration["ConnectionStrings__Tasks"],
                      new MySqlServerVersion(new Version(8, 0, 40))));
 //Sugger
-builder.Services.AddControllers();
+// builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();                     
 //jwt
@@ -114,15 +114,12 @@ app.MapDelete("/Task/{id}", async (int id, ToDoDbContext context, HttpContext ht
 });
 
 //Sugger
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
-
-// Redirect to Swagger homepage
-app.MapGet("/", () => Results.Redirect("/swagger"));
-
+// if (app.Environment.IsDevelopment())
+// {
+app.UseSwagger();
+app.UseSwaggerUI();
+app.UseHttpsRedirection();
+// }
 app.MapPost("/Login", async (UserLogin login, ToDoDbContext context, JwtService jwtService) =>
 {
     var user = await context.Users.FirstOrDefaultAsync(u => u.Username == login.Username);
@@ -144,5 +141,6 @@ app.MapPost("/Register", async (User user, ToDoDbContext context) =>
     await context.SaveChangesAsync();
     return Results.Ok("User registered successfully.");
 });
+app.MapGet("/", () => "Auther Api is running");
 
 app.Run();
