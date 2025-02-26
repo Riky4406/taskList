@@ -49,7 +49,9 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     });
     builder.Services.AddSingleton<JwtService>();
     builder.Services.AddScoped<JwtService>();
-
+    
+// Add authorization services
+builder.Services.AddAuthorization(); 
 
 var app = builder.Build();
 
