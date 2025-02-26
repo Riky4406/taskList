@@ -14,6 +14,8 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 15px 2px;
+    display: none;
+    visibility: hidden;
 }
 /* לוגו בעמוד הבית (ממוקם במרכז) */
 .app-header{
