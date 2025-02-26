@@ -39,7 +39,7 @@ export default {
   // Fetch all tasks
   getTasks: async () => {
     try {
-      const result = await axios.get('/Tasks/'); // EndPoint מותאם
+      const result = await axios.get('/Tasks'); // EndPoint מותאם
       return result.data;
     } catch (error) {
       console.error('Error fetching tasks:', error);
@@ -84,7 +84,7 @@ export default {
     // Login
     login: async (username, password) => {
       try {
-        const result = await axios.post('/Login', { username, password });
+        const result = await axios.post('Login', { username, password });
         return result.data; // יחזיר את הטוקן
       } catch (error) {
         console.error('Error logging in:', error);
@@ -95,7 +95,7 @@ export default {
     // Register
     register: async (username, password) => {
       try {
-        const result = await axios.post('/Register', { username, password });
+        const result = await axios.post('Register', { username, password });
         return result.data;
       } catch (error) {
         console.error('Error registering user:', error);
