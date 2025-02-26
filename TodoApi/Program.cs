@@ -19,7 +19,6 @@ builder.Services.AddCors(options =>
    options.AddPolicy("AllowAllOrigins", builder =>
    {
             builder.AllowAnyOrigin()
-    //  WithOrigins("http://example.com")
             .AllowAnyMethod()
             .AllowAnyHeader();
    });
@@ -54,8 +53,16 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 
 var app = builder.Build();
 
+//jwt
 app.UseAuthentication();
 app.UseAuthorization();
+
+//Sugger
+
+app.UseSwagger();
+app.UseSwaggerUI();
+app.UseHttpsRedirection();
+
 //cors
 app.UseCors("AllowAllOrigins");
 
@@ -65,6 +72,7 @@ int? GetUserIdFromToken(HttpContext httpContext)
     var userIdClaim = httpContext.User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier);
     return userIdClaim != null ? int.Parse(userIdClaim.Value) : (int?)null;
 }
+app.MapGet("/", () => "Auther Api is running");
 
 app.MapGet("/Tasks", async (ToDoDbContext context, HttpContext httpContext) =>
 {
@@ -113,13 +121,8 @@ app.MapDelete("/Task/{id}", async (int id, ToDoDbContext context, HttpContext ht
     return Results.NoContent();
 });
 
-//Sugger
-// if (app.Environment.IsDevelopment())
-// {
-app.UseSwagger();
-app.UseSwaggerUI();
-app.UseHttpsRedirection();
-// }
+
+
 app.MapPost("/Login", async (UserLogin login, ToDoDbContext context, JwtService jwtService) =>
 {
     var user = await context.Users.FirstOrDefaultAsync(u => u.Username == login.Username);
@@ -141,6 +144,6 @@ app.MapPost("/Register", async (User user, ToDoDbContext context) =>
     await context.SaveChangesAsync();
     return Results.Ok("User registered successfully.");
 });
-app.MapGet("/", () => "Auther Api is running");
+
 
 app.Run();
