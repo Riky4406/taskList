@@ -27,7 +27,7 @@ builder.Services.AddCors(options =>
 
 //contact to mysql
 builder.Services.AddDbContext<ToDoDbContext>(options =>
-    options.UseMySql(builder.Configuration.GetConnectionString("Tasks"),
+    options.UseMySql(builder.Configuration["ConnectionStrings__Tasks"],
                      new MySqlServerVersion(new Version(8, 0, 40))));
 //Sugger
 builder.Services.AddControllers();
@@ -99,20 +99,7 @@ app.MapPut("/Task/{id}", async (int id, bool isComplete, ToDoDbContext context, 
     await context.SaveChangesAsync();
     return Results.NoContent();
 });
-// app.MapPut("/Task/{id}", async (HttpContext httpContext, int id, bool IsComplete, ToDoDbContext context) =>
-// {
-//     // חילוץ מזהה המשתמש
-//     var userId = int.Parse(httpContext.User.Claims.FirstOrDefault(c => c.Type == "UserId")?.Value);
-//      // חיפוש המשימה של המשתמש לפי מזהה
-//     var item = await context.Items.FirstOrDefaultAsync(i => i.Id == id && i.UserId == userId);
-//     // אם לא קיים המשימה 
-//     if (item is null) return Results.NotFound();
-//     //מחליף את  סטטוס המשימה 
-//     item.IsComplete = IsComplete;
-//     //שומר שינויים 
-//     await context.SaveChangesAsync();
-//     return Results.NoContent();
-// });
+
 app.MapDelete("/Task/{id}", async (int id, ToDoDbContext context, HttpContext httpContext) =>
 {
     var userId = GetUserIdFromToken(httpContext);
