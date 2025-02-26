@@ -10,6 +10,10 @@ body {
 }
 .app-header1{
     margin-top: 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 2px;
 }
 /* לוגו בעמוד הבית (ממוקם במרכז) */
 .app-header{
