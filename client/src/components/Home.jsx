@@ -13,10 +13,9 @@ export const Home = () => {
   };
 
   return (
-    <>
+    
     <div className="home-page">
       <div>
-      <header class="app-header1">
           <svg
       className="logo"
       viewBox="0 0 100 100"
@@ -42,7 +41,6 @@ export const Home = () => {
         </linearGradient>
       </defs>
     </svg>
-    </header>
     <h1 class="title1">Your Tasks, Your Way.</h1>
     </div>
       <div className="button-container">
@@ -54,7 +52,6 @@ export const Home = () => {
         </button>
       </div>
     </div>
-    </>
   );
 };
 export default Home;
