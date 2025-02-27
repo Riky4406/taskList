@@ -13,6 +13,7 @@ export const Home = () => {
   };
 
   return (
+    <header class="app-header1">
     <div className="home-page">
       <div>
           <svg
@@ -40,6 +41,7 @@ export const Home = () => {
         </linearGradient>
       </defs>
     </svg>
+    </header>
     <h1 class="title1">Your Tasks, Your Way.</h1>
     </div>
       <div className="button-container">
