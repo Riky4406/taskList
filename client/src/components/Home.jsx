@@ -13,9 +13,10 @@ export const Home = () => {
   };
 
   return (
-    <header class="app-header1">
+    <>
     <div className="home-page">
       <div>
+      <header class="app-header1">
           <svg
       className="logo"
       viewBox="0 0 100 100"
@@ -53,6 +54,7 @@ export const Home = () => {
         </button>
       </div>
     </div>
+    </>
   );
 };
 export default Home;
