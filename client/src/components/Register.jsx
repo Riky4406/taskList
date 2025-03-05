@@ -18,20 +18,13 @@ function Register() {
       console.log("Registration response:", response);
 
       // בדיקה אם ההרשמה הצליחה
-      // if (response && response.token) {
+      if (response && response.token) {
 
-      //   alert("User registered successfully");
-      //   localStorage.setItem("token", response.token); // שמירה בטוקן הנכון
-      //   navigate("/tasks");
-      // } else {
-      //   navigate("/Login");
-      // }
-      if (response.message === "User registered successfully.") {
-        alert("User registered successfully!");
-        if (response.token) {
-          localStorage.setItem("token", response.token); //  - localStorage שומר את הטוקן
-        }
-        navigate("/tasks"); // הפניה לדף המשימות
+        alert("User registered successfully");
+        localStorage.setItem("token", response.token); // שמירה בטוקן הנכון
+        navigate("/tasks");
+      } else {
+        navigate("/Login");
       }
     } catch (error) {
       alert("Registration failed! Please try again.");
