@@ -18,12 +18,20 @@ function Register() {
       console.log("Registration response:", response);
 
       // בדיקה אם ההרשמה הצליחה
-      if (response && response.token) {
-        alert("User registered successfully");
-        localStorage.setItem("token", response.token); // שמירה בטוקן הנכון
-        navigate("/tasks");
-      } else {
-        navigate("/Login");
+      // if (response && response.token) {
+
+      //   alert("User registered successfully");
+      //   localStorage.setItem("token", response.token); // שמירה בטוקן הנכון
+      //   navigate("/tasks");
+      // } else {
+      //   navigate("/Login");
+      // }
+      if (response.message === "User registered successfully.") {
+        alert("User registered successfully!");
+        if (response.token) {
+          localStorage.setItem("token", response.token); //  - localStorage שומר את הטוקן
+        }
+        navigate("/tasks"); // הפניה לדף המשימות
       }
     } catch (error) {
       alert("Registration failed! Please try again.");
@@ -32,7 +40,7 @@ function Register() {
   return (
     <>
       <header className="app-header">
-      <svg
+        <svg
           className="logo2"
           viewBox="0 0 100 100"
           xmlns="http://www.w3.org/2000/svg"
@@ -84,7 +92,13 @@ function Register() {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-          <button className="new-todo" style={{ cursor: 'pointer' }} onClick={handleRegister}>Register</button>
+          <button
+            className="new-todo"
+            style={{ cursor: "pointer" }}
+            onClick={handleRegister}
+          >
+            Register
+          </button>
           <p>
             Do have an account? <a href="/Login">Login here</a>.
           </p>
@@ -94,7 +108,7 @@ function Register() {
   );
 }
 
-  // return (
+// return (
 //     <div>
 //       {/* logo */}
 //       <svg
